@@ -7,7 +7,7 @@
             "defaultValue": "we-main-vnet"
         },
         "rebuildVNET": {
-            "type": "string","defaultValue": "No"
+            "type": "string","defaultValue": "Yes"
         },
         "subnets": {
             "type": "array",

@@ -1,5 +1,5 @@
 ﻿$location = 'westeurope'
-$rgname = "testnab-rg"
+$rgname = "testnab4-rg"
 $templateuri = "https://raw.githubusercontent.com/nabbdl/vnet-nested-arm-template/master/azuredeploy.json"
 New-AzResourceGroup -Name $rgname -Location $location 
 #If it's first deployment use 
