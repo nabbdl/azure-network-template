@@ -14,7 +14,7 @@
                 {
                     "name": "GatewaySubnet",
                     "addressPrefix": "10.4.0.0/24",
-                    "networkSecurityGroup": "NSG-AllowAll", // these have to be different only because I'm creating them in the same template, these can be identical
+                    "networkSecurityGroup": "NSG-AllowAll" // these have to be different only because I'm creating them in the same template, these can be identical
                 },
                 {
                     "name": "UnTrusted",
