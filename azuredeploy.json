@@ -1,0 +1,74 @@
+{
+  "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+  "contentVersion": "1.0.0.0",
+  "parameters": {
+    "_artifactsLocation": {
+      "type": "string",
+      "metadata": {
+          "description": "The name of the subscription that contains the keyvault."
+      },
+      "defaultValue": "https://raw.githubusercontent.com/nabbdl/vnet-nested-arm-template/master"
+    },
+    "_artifactsLocationSasToken": {
+       "type": "securestring",
+       "metadata": {
+          "description": "The sasToken required to access _artifactsLocation.  When the template is deployed using the accompanying scripts, a sasToken will be automatically generated."
+        },
+       "defaultValue": ""
+    },
+    "rebuildVNET": {"type": "string","defaultValue": "No"}
+  },
+  "variables": {
+    "SubnetTemplateFolder": "nestedtemplates",
+    "SubnetTemplateFileName": "Subnet.json",
+    "VirtualNetworkTemplateFileName": "virtualnetwork.json",
+    "VirtualNetworkPrefix": "10.3.0.0/16",
+    "VNETName": "main-we-vnet"
+  },
+  "resources": [
+    {
+      "name": "Subnet",
+      "type": "Microsoft.Resources/deployments",
+      "apiVersion": "2015-01-01",
+      "dependsOn": [
+        "[variables('VNETName')]"
+      ],
+      "properties": {
+        "mode": "Incremental",
+        "templateLink": {
+          "uri": "[concat(parameters('_artifactsLocation'), '/', variables('SubnetTemplateFolder'), '/', variables('SubnetTemplateFileName'), parameters('_artifactsLocationSasToken'))]",
+          "contentVersion": "1.0.0.0"
+        },
+        "parameters": {
+          "_artifactsLocation": { "value": "[parameters('_artifactsLocation')]" },
+          "_artifactsLocationSasToken": { "value": "[parameters('_artifactsLocationSasToken')]" },
+          "VNETName": {
+            "value": "[variables('VNETName')]"
+
+          }
+        }
+      }
+    },
+    {
+      "name": "[variables('VNETName')]",
+      "condition": "[equals(parameters('rebuildVNET'),'Yes')]",
+      "type": "Microsoft.Network/virtualNetworks",
+      "location": "[resourceGroup().location]",
+      "apiVersion": "2018-01-01",
+      "dependsOn": [],
+      "tags": {
+        "displayName": "[variables('VNETName')]"
+      },
+      "properties": {
+        "addressSpace": {
+          "addressPrefixes": [
+            "[variables('VirtualNetworkPrefix')]"
+          ]
+        },
+        "subnets": [
+        ]
+      }
+    }
+  ],
+  "outputs": {}
+}
