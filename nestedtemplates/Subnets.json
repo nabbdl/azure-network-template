@@ -12,20 +12,20 @@
             "type": "array",
             "defaultValue": [
                 {
-                    "name": "prdwe-dmzin-sub",
+                    "name": "GatewaySubnet",
                     "addressPrefix": "10.4.0.0/24",
-                    "networkSecurityGroup": "prdwe-dmzin-nsg",
-                    "routeTable": "Default-UDR"
+                    "networkSecurityGroup": "NSG-AllowAll", // these have to be different only because I'm creating them in the same template, these can be identical
+                    "routeTable": "UDR-Default"
                 },
                 {
-                    "name": "prdwe-fwmgmt-sub",
-                    "addressPrefix": "10.4.254.0/26",
-                    "networkSecurityGroup": "prdwe-fwmgmt-nsg"
+                    "name": "UnTrusted",
+                    "addressPrefix": "10.4.1.0/24",
+                    "networkSecurityGroup": "NSG-AllowAll1" // these have to be different only because I'm creating them in the same template, these can be identical
                 },
                 {
-                    "name": "prdwe-fwhasync-sub",
-                    "addressPrefix": "10.4.254.64/26",
-                    "networkSecurityGroup": "prdwe-fwhasync-nsg"
+                    "name": "routed",
+                    "addressPrefix": "10.4.2.0/24",
+                    "routeTable": "UDR-Default1"
                 }
             ]
         }
