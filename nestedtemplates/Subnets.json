@@ -12,20 +12,39 @@
             "type": "array",
             "defaultValue": [
                 {
-                    "name": "GatewaySubnet",
-                    "addressPrefix": "10.2.0.0/24",
-                    "networkSecurityGroup": "NSG-AllowAll", // these have to be different only because I'm creating them in the same template, these can be identical
-                    "routeTable": "UDR-Default"
+                    "name": "prdwe-dmzin-sub",
+                    "addressPrefix": "10.4.0.0/24",
+                    "networkSecurityGroup": "prdwe-dmzin-nsg"
                 },
                 {
-                    "name": "UnTrusted",
-                    "addressPrefix": "10.2.1.0/24",
-                    "networkSecurityGroup": "NSG-AllowAll1" // these have to be different only because I'm creating them in the same template, these can be identical
+                    "name": "prdwe-fwmgmt-sub",
+                    "addressPrefix": "10.4.254.0/26",
+                    "networkSecurityGroup": "prdwe-fwmgmt-nsg"
                 },
                 {
-                    "name": "routed",
-                    "addressPrefix": "10.2.2.0/24",
-                    "routeTable": "UDR-Default1"
+                    "name": "prdwe-fwhasync-sub",
+                    "addressPrefix": "10.4.254.64/26",
+                    "networkSecurityGroup": "prdwe-fwhasync-nsg"
+                },
+                {
+                    "name": "prdwe-dmzout-sub",
+                    "addressPrefix": "10.4.1.0/25",
+                    "networkSecurityGroup": "prdwe-dmzout-nsg"
+                },
+                {
+                    "name": "prdwe-agw-sub",
+                    "addressPrefix": "10.4.1.128/25",
+                    "networkSecurityGroup": "prdwe-agw-nsg"
+                },
+                {
+                    "name": "prdwe-bdlaks-sub-0",
+                    "addressPrefix": "10.4.2.0/23",
+                    "routeTable": "default-udr"
+                },
+                {
+                    "name": "prdwe-bdlaks-sub-1",
+                    "addressPrefix": "10.4.4.0/23",
+                    "routeTable": "default-udr"
                 }
             ]
         }
