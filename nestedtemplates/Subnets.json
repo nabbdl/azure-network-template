@@ -15,11 +15,12 @@
                     "name": "prdwe-dmzin-sub",
                     "addressPrefix": "10.4.0.0/24",
                     "networkSecurityGroup": "prdwe-dmzin-nsg",
-                     "routeTable": "Default-UDR"
+                    "routeTable": "Default-UDR"
                 },
                 {
                     "name": "prdwe-fwmgmt-sub",
-                    "addressPrefix": "10.4.254.0/26"
+                    "addressPrefix": "10.4.254.0/26",
+                    "networkSecurityGroup": "prdwe-fwmgmt-nsg"
                 },
                 {
                     "name": "prdwe-fwhasync-sub",
