@@ -18,8 +18,7 @@
                 },
                 {
                     "name": "prdwe-fwmgmt-sub",
-                    "addressPrefix": "10.4.254.0/26",
-                    "networkSecurityGroup": "prdwe-fwmgmt-nsg"
+                    "addressPrefix": "10.4.254.0/26"
                 },
                 {
                     "name": "prdwe-fwhasync-sub",
