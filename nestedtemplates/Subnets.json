@@ -26,26 +26,6 @@
                     "name": "prdwe-fwhasync-sub",
                     "addressPrefix": "10.4.254.64/26",
                     "networkSecurityGroup": "prdwe-fwhasync-nsg"
-                },
-                {
-                    "name": "prdwe-dmzout-sub",
-                    "addressPrefix": "10.4.1.0/25",
-                    "networkSecurityGroup": "prdwe-dmzout-nsg"
-                },
-                {
-                    "name": "prdwe-agw-sub",
-                    "addressPrefix": "10.4.1.128/25",
-                    "networkSecurityGroup": "prdwe-agw-sub-nsg"
-                },
-                {
-                    "name": "prdwe-bdlaks-sub-0",
-                    "addressPrefix": "10.4.2.0/23",
-                    "routeTable": "default-udr"
-                },
-                {
-                    "name": "prdwe-bdlaks-sub-1",
-                    "addressPrefix": "10.4.4.0/23",
-                    "routeTable": "default-udr"
                 }
             ]
         }
