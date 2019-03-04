@@ -14,7 +14,8 @@
                 {
                     "name": "prdwe-dmzin-sub",
                     "addressPrefix": "10.4.0.0/24",
-                    "networkSecurityGroup": "prdwe-dmzin-nsg"
+                    "networkSecurityGroup": "prdwe-dmzin-nsg",
+                     "routeTable": "Default-UDR"
                 },
                 {
                     "name": "prdwe-fwmgmt-sub",
