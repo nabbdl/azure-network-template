@@ -3,11 +3,10 @@
     "contentVersion": "1.0.0.0",
     "parameters": {
         "deploymentPrefix": {
-            "type": "string",
-            "defaultValue": "we-main-vnet"
+            "type": "string"
         },
         "rebuildVNET": {
-            "type": "string","defaultValue": "Yes"
+            "type": "string","defaultValue": "No"
         },
         "subnets": {
             "type": "array",
@@ -124,7 +123,7 @@
             "properties": {
                 "addressSpace": {
                     "addressPrefixes": [
-                        "10.2.0.0/16"
+                        "10.4.0.0/16"
                     ]
                 },
                 "copy": [
