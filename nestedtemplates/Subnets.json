@@ -15,7 +15,7 @@
                 {
                     "name": "prdwe-dmzin-sub",
                     "addressPrefix": "10.4.0.0/24",
-                    "networkSecurityGroup": "prdwe-dmzin-sub-nsg" // these have to be different only because I'm creating them in the same template, these can be identical
+                    "networkSecurityGroup": "prdwe-dmzin-nsg"
                 },
                 {
                     "name": "prdwe-fwmgmt-sub",
@@ -30,12 +30,12 @@
                 {
                     "name": "prdwe-dmzout-sub",
                     "addressPrefix": "10.4.1.0/25",
-                    "networkSecurityGroup": "prdwe-dmzout-nsg" // these have to be different only because I'm creating them in the same template, these can be identical
+                    "networkSecurityGroup": "prdwe-dmzout-nsg"
                 },
                 {
                     "name": "prdwe-agw-sub",
                     "addressPrefix": "10.4.1.128/25",
-                    "networkSecurityGroup": "prdwe-agw-sub-nsg" // these have to be different only because I'm creating them in the same template, these can be identical
+                    "networkSecurityGroup": "prdwe-agw-sub-nsg"
                 },
                 {
                     "name": "prdwe-bdlaks-sub-0",
